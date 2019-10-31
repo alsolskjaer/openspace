@@ -106,12 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets'),]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
-STATIC_URL = STATIC_HOST + '/static/'
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -129,4 +123,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets'),]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
+STATIC_URL = STATIC_HOST + '/static/'
