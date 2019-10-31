@@ -75,6 +75,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'todolistAPI.wsgi.application'
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+location = lambda x: os.path.join(
+    os.path.dirname(os.path.realpath(__file__)), x)
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -84,10 +87,6 @@ DATABASES = {
                 default='sqlite:///{0}'.format(location('db.sqlite3')),
                 conn_max_age=0)
 }
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-location = lambda x: os.path.join(
-    os.path.dirname(os.path.realpath(__file__)), x)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
