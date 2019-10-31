@@ -1,0 +1,14 @@
+{
+    "openapi": "OpenAPI 3",
+    "info": {
+        "title": "Layanan Pegawai",
+        "description": "API yang digunakan untuk mengelola data pegawai",
+        "version": "1"
+    },
+    "servers": [
+        {
+            "url": "127.0.0.1"
+            "description": "
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+  "openapi": "OpenAPI 3",
+  "info": {
+    "title": "Layanan Pegawai",
+    "description": "API yang digunakan untuk mengelola data pegawai",
+    "version": "1"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8000",
+      "description": "Deskripsi server #1"
+    }
+  ],
+  "paths": {
+    "Endpoint path": {
+      "Metode": {
+        "tags": ["Grup tag API Path (opsional),→ "],
+        "summary": "Ringkasan API Path (,→ opsional)",
+        "description": "Deskripsi API Path (,→ opsional)",
+        "operationId": "String unik operasi (,→ opsional).",
+        "externalDocs": {
+          "url": "URL dokumentasi eksternal (,→ opsional)",
+          "description": "Deskripsi,→ dokumentasi eksternal (,→ opsional)"
+        },
+        "responses": {
+          "Kode status": {
+            "description": "Deskripsi,→ respon",
+            "content": {
+              "Tipe konten": {
+                "schema": {
+                  "type": "Tipe (str,,→ int, ...)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
