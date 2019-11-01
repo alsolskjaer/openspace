@@ -183,7 +183,7 @@
     dataType: "json",
     success: function (data) {
         $('#theseat').text(data[5].description)
-        if (parseInt($('#theseat').text(data[5].description))<8){
+        if (parseInt($('#theseat').text())<8){
         $('#theval').text('2500')
         }
       }
