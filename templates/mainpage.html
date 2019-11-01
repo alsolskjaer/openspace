@@ -103,7 +103,7 @@
               font-family: 'sailec-medium';
               font-size: 1.5em;
             ">
-              Discount : 5.000 Won
+              Discount : <div id="theval">5000</div> Won
             </div>
             <input type="button" id="thebtn" style="
             margin: 10px;
@@ -172,6 +172,10 @@
     )
   });
 
+  
+
+
+
   setInterval(function(){
     $.ajax({
     url: 'http://openspacelnp.herokuapp.com/api/robot/todo/',
@@ -179,6 +183,9 @@
     dataType: "json",
     success: function (data) {
         $('#theseat').text(data[5].description)
+        if (parseInt($('#theseat').text(data[5].description))<8){
+        $('#theval').text('2500')
+        }
       }
     });
   },2000)
