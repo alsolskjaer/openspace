@@ -95,7 +95,7 @@
             </div>
             <div style="
             margin: 10px;">
-              Available seats : <input value=10 id="theseat">
+              Available seats : <input value=0 id="theseat">
             </div>
             <div style="        
               margin: 10px;
@@ -165,15 +165,23 @@
     <script src="{% static 'js/main.js' %}" ></script>
   <script>
   $('#thebtn').click(function(){
-    let a = parseInt($('#theseat').val());
-    console.log(a)
-    $('#theseat').val(a+1);
     Swal.fire(
       'Congratulations',
       'You got 5.000 Won coupon and your seat is booked',
       'success'
     )
   });
+
+  setInterval(function(){
+    $.ajax({
+    url: 'https://openspacelnp.herokuapp.com/api/robot/todo/',
+    type: "GET",
+    dataType: "json",
+    success: function (data) {
+        $('#theseat').val(data[5].id)
+      }
+    });
+  },2000)
   </script>
 </body>
 
