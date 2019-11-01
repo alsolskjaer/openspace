@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
 
 from todo.views import ToDoViewSet
 
 urlpatterns = [
+    path('', views.Landing_Page.as_view(), name='landing_page'),
     path('admin/', admin.site.urls),
     path('api/<slug:user>/todo/', ToDoViewSet.as_view(
         {'get': 'list', 'post': 'create'})),
