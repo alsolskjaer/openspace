@@ -95,7 +95,7 @@
             </div>
             <div style="
             margin: 10px;">
-              Available seats : <input value=0 id="theseat">
+              Available seats : <div id="theseat">0</div>
             </div>
             <div style="        
               margin: 10px;
@@ -178,7 +178,7 @@
     type: "GET",
     dataType: "json",
     success: function (data) {
-        $('#theseat').val(data[5].description)
+        $('#theseat').text(data[5].description)
       }
     });
   },2000)
