@@ -21,10 +21,12 @@ from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 
-from todo.views import ToDoViewSet
+from todo.views import ToDoViewSet, APIIncrement, APIDecrement
 
 urlpatterns = [
     path('', views.Landing_Page.as_view(), name='landing_page'),
+    path('inc',APIIncrement, name='apiincrement'),
+    path('dec',APIDecrement, name='apidecrement'),
     path('main', views.Main_Page.as_view(), name='main_page'),
     path('admin/', admin.site.urls),
     path('api/<slug:user>/todo/', ToDoViewSet.as_view(

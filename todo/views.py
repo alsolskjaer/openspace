@@ -3,6 +3,7 @@ from rest_framework.response import Response
 
 from .serializers import ToDoSerializer
 from .models import ToDo
+from django.http import HttpResponse
 
 
 class ToDoViewSet(viewsets.ModelViewSet):
@@ -23,3 +24,15 @@ class ToDoViewSet(viewsets.ModelViewSet):
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+def APIIncrement(request):
+    cafe = ToDo.objects.get(name="Hollys Coffee")
+    cafe.description = int(cafe.description) + 1
+    cafe.save()
+    return HttpResponse(status=200)
+
+def APIDecrement(request):
+    cafe = ToDo.objects.get(name="Hollys Coffee")
+    cafe.description = int(cafe.description) - 1
+    cafe.save()
+    return HttpResponse(status=200)
