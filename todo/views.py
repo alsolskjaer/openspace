@@ -26,13 +26,13 @@ class ToDoViewSet(viewsets.ModelViewSet):
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 def APIIncrement(request):
-    cafe = ToDo.objects.get(name="Hollys Coffee")
+    cafe = ToDo.objects.get(name="Hollys Coffee Daegu")
     cafe.description = int(cafe.description) + 1
     cafe.save()
     return HttpResponse(status=200)
 
 def APIDecrement(request):
-    cafe = ToDo.objects.get(name="Hollys Coffee")
+    cafe = ToDo.objects.get(name="Hollys Coffee Daegu")
     cafe.description = int(cafe.description) - 1
     cafe.save()
     return HttpResponse(status=200)
