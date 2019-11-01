@@ -21,6 +21,7 @@ from todo.views import ToDoViewSet
 
 urlpatterns = [
     path('', views.Landing_Page.as_view(), name='landing_page'),
+    path('main', views.Main_Page.as_view(), name='main_page'),
     path('admin/', admin.site.urls),
     path('api/<slug:user>/todo/', ToDoViewSet.as_view(
         {'get': 'list', 'post': 'create'})),
