@@ -28,3 +28,6 @@ urlpatterns = [
     path('api/<slug:user>/todo/<int:pk>/', ToDoViewSet.as_view(
         {'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}))
 ]
+
+if settings.DEBUG :
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
