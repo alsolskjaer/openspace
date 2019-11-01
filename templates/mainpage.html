@@ -103,7 +103,7 @@
               font-family: 'sailec-medium';
               font-size: 1.5em;
             ">
-              Discount : <div id="theval">5000</div> Won
+              Discount : <div id="theval">1000</div> Won
             </div>
             <input type="button" id="thebtn" style="
             margin: 10px;
@@ -184,7 +184,7 @@
     success: function (data) {
         $('#theseat').text(data[5].description)
         if (parseInt($('#theseat').text())<8){
-        $('#theval').text('2500')
+        $('#theval').text('500')
         }
       }
     });
