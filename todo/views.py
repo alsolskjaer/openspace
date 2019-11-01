@@ -36,3 +36,9 @@ def APIDecrement(request):
     cafe.description = int(cafe.description) - 1
     cafe.save()
     return HttpResponse(status=200)
+
+def APIDefault(request):
+    cafe = ToDo.objects.get(name="Hollys Coffee Daegu")
+    cafe.description = 10
+    cafe.save()
+    return HttpResponse(status=200)

@@ -295,6 +295,10 @@ section {
     bottom: 10px;
 }
 
+#theseat {
+	border:hidden;
+}
+
 .landing-image-space {
 	height: 200px;
 }
