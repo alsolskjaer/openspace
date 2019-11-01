@@ -37,46 +37,6 @@
 
   <div class="col-xs-12 card-class-container">
     <div class="card-class-content">
-      <div class="card-class-image">
-        <img height="350" style="width:100%;object-fit: cover;"src="{% static 'image/1.jpeg' %}" />
-      </div>
-      <div class="card-class-text">
-        <div style="
-        font-size: 25px;
-        margin: 10px;
-    ">
-          Hollys Cafe
-        </div>
-        <div style="
-        margin: 10px;
-        font-size: 12px;
-    ">
-          32 Dongseong-ro 6-gil, Seongnae 1(il)-dong · 053-255-8231
-        </div>
-        <div style="
-        margin: 10px;">
-          Available seats : 10
-        </div>
-        <div style="        
-          margin: 10px;
-          color: #e84118;
-          font-family: 'sailec-medium';
-          font-size: 1.5em;
-        ">
-          Discount : 5.000 Won
-        </div>
-        <div style="
-        margin: 10px;
-        float: right;
-        background-color: #e84118;
-        padding: 10px 20px;
-        font-family: 'Sailec-bold';
-        color: white;
-        border-radius: 10px;
-    ">Book with discount</div>
-      </div>
-    </div>
-    <div class="card-class-content">
         <div class="card-class-image">
           <img height="350" style="width:100%;object-fit: cover;"src="{% static 'image/3.jpeg' %}" />
         </div>
@@ -116,6 +76,46 @@
       ">Book with discount</div>
         </div>
       </div>
+      <div class="card-class-content">
+          <div class="card-class-image">
+            <img height="350" style="width:100%;object-fit: cover;"src="{% static 'image/1.jpeg' %}" />
+          </div>
+          <div class="card-class-text">
+            <div style="
+            font-size: 25px;
+            margin: 10px;
+        ">
+              Hollys Cafe
+            </div>
+            <div style="
+            margin: 10px;
+            font-size: 12px;
+        ">
+              32 Dongseong-ro 6-gil, Seongnae 1(il)-dong · 053-255-8231
+            </div>
+            <div style="
+            margin: 10px;">
+              Available seats : <input value=10 id="theseat">
+            </div>
+            <div style="        
+              margin: 10px;
+              color: #e84118;
+              font-family: 'sailec-medium';
+              font-size: 1.5em;
+            ">
+              Discount : 5.000 Won
+            </div>
+            <input type="button" id="thebtn" style="
+            margin: 10px;
+            float: right;
+            background-color: #e84118;
+            padding: 10px 20px;
+            font-family: 'Sailec-bold';
+            color: white;
+            border-radius: 10px;
+        " value="Book with discount">
+          </div>
+        </div>
       <div class="card-class-content">
           <div class="card-class-image">
             <img height="350" style="width:100%;object-fit: cover;"src="{% static 'image/2.jpeg' %}" />
@@ -161,7 +161,20 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-  <script src="{% static 'js/main.js' %}" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="{% static 'js/main.js' %}" ></script>
+  <script>
+  $('#thebtn').click(function(){
+    let a = parseInt($('#theseat').val());
+    console.log(a)
+    $('#theseat').val(a+1);
+    Swal.fire(
+      'Congratulations',
+      'You got 5.000 Won coupon and your seat is booked',
+      'success'
+    )
+  });
+  </script>
 </body>
 
 </html>

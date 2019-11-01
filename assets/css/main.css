@@ -76,11 +76,12 @@ header {
 
 .landing-scroll-up {
 	font-family: 'Sailec';
-	height: 6vh;
-	background-color: rgb(0, 140, 140);
-	text-align: center;
-	color: white;
-	font-size: 0.8em;
+    height: 6vh;
+    background-color: rgb(0, 140, 140);
+    text-align: center;
+    color: white;
+    font-size: 0.8em;
+    padding-top: 10px;
 }
 
 .landing-header {
@@ -285,15 +286,11 @@ section {
 	font-family: 'Sailec-light';
 }
 .landing-scroll-up-icon {
-	position: absolute;
-    bottom: 13px;
-    right: 80px;
-    font-size: 20px;
+	font-size: 20px;
+    float: right;
+    margin-right: 50px;
 }
 .landing-scroll-up-text {
-	position: absolute;
-    left: 0;
-    right: 0;
     font-size: 20px;
     bottom: 10px;
 }
